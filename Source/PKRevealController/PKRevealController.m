@@ -1421,7 +1421,9 @@ typedef struct
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
                                          duration:(NSTimeInterval)duration
 {
-    [self.frontView updateShadowWithAnimationDuration:duration];
+    if (self.frontView.shadow) {
+        [self.frontView updateShadowWithAnimationDuration:duration];
+    }
 }
 
 @end
