@@ -68,6 +68,7 @@ FOUNDATION_EXTERN NSString * const PKRevealControllerRecognizesResetTapOnFrontVi
 #pragma mark - Properties
 /// The view controller displayed on top of the left and right ones.
 @property (nonatomic, readwrite) UIViewController *frontViewController;
+@property (nonatomic, readwrite) BOOL frontViewShadow; // By default it will be YES!
 
 /// The view controller on the left.
 @property (nonatomic, readwrite) UIViewController *leftViewController;

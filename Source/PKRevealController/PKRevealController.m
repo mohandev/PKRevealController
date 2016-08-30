@@ -41,6 +41,7 @@
 #define DEFAULT_RECOGNIZES_PAN_ON_FRONT_VIEW_VALUE YES
 #define DEFAULT_RECOGNIZES_RESET_TAP_ON_FRONT_VIEW_VALUE YES
 #define DEFAULT_RECOGNIZES_RESET_TAP_ON_FRONT_VIEW_IN_PRESENTATION_MODE_VALUE YES
+#define DEFAULT_FRONT_VIEW_SHADOW YES
 
 NSString * const PKRevealControllerAnimationDurationKey = @"animationDuration";
 NSString * const PKRevealControllerAnimationCurveKey = @"animationCurve";
@@ -552,6 +553,7 @@ typedef struct
     _leftViewWidthRange = DEFAULT_LEFT_VIEW_WIDTH_RANGE;
     _rightViewWidthRange = DEFAULT_RIGHT_VIEW_WIDTH_RANGE;
     _recognizesResetTapOnFrontViewInPresentationMode = DEFAULT_RECOGNIZES_RESET_TAP_ON_FRONT_VIEW_IN_PRESENTATION_MODE_VALUE;
+    _frontViewShadow = DEFAULT_FRONT_VIEW_SHADOW;
 }
 
 - (void)setupContainerViews
@@ -568,7 +570,7 @@ typedef struct
     self.leftView.viewController = self.leftViewController;
     self.frontView.viewController = self.frontViewController;
     
-    self.frontView.shadow = NO;
+    self.frontView.shadow = self.frontViewShadow;
     
     self.leftView.hidden = YES;
     self.rightView.hidden = YES;
